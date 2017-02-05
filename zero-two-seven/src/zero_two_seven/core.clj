@@ -2,13 +2,7 @@
   (:gen-class))
 
 (defn pal [ls]
-  ; Need to use cons
-  (loop [old-list ls new-list []]
-    (if (empty? old-list)
-      (if (= new-list ls)
-        true
-        false)
-      (recur (rest old-list) (cons (first old-list) new-list)))))
+  (= (map (fn [l] l) ls) (reverse ls)))
 
 (defn -main
   "I don't do a whole lot ... yet."
